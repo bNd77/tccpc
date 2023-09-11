@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.jpg" />
+    <title>Cadastrar dados das vitimas</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-image">
+            <img src="assets/img/conselho-tutelar.jpg" alt="">
+        </div>
+        <div class="form">
+            <form action="/tcc/cadastro_vitima/cadastro_vitima.php" method="POST">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastrar dados das vitimas</h1>
+                    </div>
+                </div>
+                <div class="login-button">
+                    <button><a href="/tcc/admin/index.php" class="bi bi-box-arrow-left btn btn-danger">Sair</a></button>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="">Cpf</label>
+                        <input id="cpf" type="text" name="cpf" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="">Nome</label>
+                        <input id="nome" type="text" name="nome" >
+                    </div>
+                    <div class="input-box">
+                        <label for="">Nome do Pai</label>
+                        <input id="nome_pai" type="text" name="nome_pai" >
+                    </div>
+                    <div class="input-box">
+                        <label for="">Nome da Mãe</label>
+                        <input id="nome_mae" type="text" name="nome_mae" >
+                    </div>
+
+                    <div class="input-box">
+                        <label for="">Endereço</label>
+                        <input id="endereco" type="endereco" name="endereco" >
+                    </div>
+
+                    <div class="input-box">
+                        <label for="">Escola</label>
+                        <input id="escola" type="escola" name="escola" >
+                    </div>
+
+                    <div class="input-box">
+                        <label for="">ano</label>
+                        <input id="ano" type="text" name="ano" >
+                    </div>
+
+                    <div class="input-box">
+                        <label for="">Data de Nascimento</label>
+                        <input id="data_nascimento" type="date" name="data_nascimento">
+                    </div>
+                    
+                    <div class="gender-inputs">
+                    <div class="gender-title">
+                        <h6>Gênero</h6>
+                    </div>
+
+                    <div class="gender-group">
+                        <div class="gender-input">
+                            <input id="genero" type="radio" name="genero" value="F">
+                            <label for="F">Feminino</label>
+                        </div>
+                        <div class="gender-input">
+                            <input id="genero" type="radio" name="genero" value="M">
+                            <label for="M">Masculino</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                <div class="continue-button">
+                    <button type="submit"><a>Salvar dados</a> </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
