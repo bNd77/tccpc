@@ -18,11 +18,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Obter os dados do formulário
-    $id = $_POST["id"];
     $cpf = $_POST["cpf"];
     $nome = $_POST["nome"];
     $nome_pai = $_POST["nome_pai"];
-    $nome_mae = $POST["nome_mae"];
+    $nome_mae = $_POST["nome_mae"];
     $endereco = $_POST["endereco"];
     $escola = $_POST["escola"];
     $ano = $_POST["ano"];
@@ -30,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $genero = $_POST["genero"];
 
     // Atualizar os dados no banco de dados
-    $query = "UPDATE vitima SET cpf='$cpf', nome='$nome', nome_pai='$nome_pai', nome_mae='$nome_mae', 
+    $query = "UPDATE vitima SET cpf='$cpf' , nome='$nome', nome_pai='$nome_pai', nome_mae='$nome_mae', 
     endereco='$endereco', escola='$escola', ano='$ano', data_nascimento='$data_nascimento', genero='$genero' WHERE id_vitima=$id";
     $resultado = mysqli_query($conexao, $query);
 
@@ -60,10 +59,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Obter o ID do registro a ser editado
-    $id = $_GET["id"];
+    $cpf = $_GET["cpf"];
 
     // Buscar os dados do registro no banco de dados
-    $query = "SELECT * FROM vitima  WHERE id_vitima='$id'";
+    $query = "SELECT * FROM vitima  WHERE cpf='$cpf'";
     $resultado = mysqli_query($conexao, $query);
 
     // Verificar se o registro foi encontrado
@@ -105,71 +104,57 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="form">
             <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 
-              <input type="hidden" name="id" value="<?php echo $id; ?>">
-
-              <div class="input-group">
+                <div class="input-group">
                     <div class="input-box">
-                        <label for="">Cpf</label>
-                        <input id="cpf" type="text" name="cpf" value="<?php echo $cpf; ?>">
+                        <label for="cpf">cpf:</label>
+                        <input type="cpf" name="cpf" value="<?php echo $cpf; ?>">
                     </div>
-
+                <div class="input-group">
                     <div class="input-box">
-                        <label for="">Nome</label>
-                        <input id="nome" type="text" name="nome"<?php echo $nome; ?> >
-                    </div>
-                    <div class="input-box">
-                        <label for="">Nome do Pai</label>
-                        <input id="nome_pai" type="text" name="nome_pai" <?php echo $nome_pai; ?>>
-                    </div>
-                    <div class="input-box">
-                        <label for="">Nome da Mãe</label>
-                        <input id="nome_mae" type="text" name="nome_mae" <?php echo $nome_mae; ?>>
-                    </div>
-
-                    <div class="input-box">
-                        <label for="">Endereço</label>
-                        <input id="endereco" type="endereco" name="endereco" value="<?php echo $endereco; ?>" >
-                    </div>
-
-                    <div class="input-box">
-                        <label for="">Escola</label>
-                        <input id="escola" type="escola" name="escola" value="<?php echo $escola; ?>" >
-                    </div>
-
-                    <div class="input-box">
-                        <label for="">ano</label>
-                        <input id="ano" type="text" name="ano" value="<?php echo $ano; ?>">
-                    </div>
-
-                    <div class="input-box">
-                        <label for="">Data de Nascimento</label>
-                        <input id="data_nascimento" type="date" name="data_nascimento" value="<?php echo $data_nascimento; ?>">
-                    </div>
-                    
-                    <div class="gender-inputs">
-                    <div class="gender-title">
-                        <h6>Gênero</h6>
-                    </div>
-
-                    <div class="gender-group">
-                        <div class="gender-input">
-                            <input id="genero" type="radio" name="genero" value="F">
-                            <label for="F">Feminino</label>
-                        </div>
-                        <div class="gender-input">
-                            <input id="genero" type="radio" name="genero" value="M">
-                            <label for="M">Masculino</label>
-                        </div>
-                    </div>
+                        <label for="nome">Nome:</label>
+                        <input type="text" name="nome" value="<?php echo $nome; ?>">
                     </div>
                 </div>
-            </div>
-        
-                <div class="continue-button">
-                    <button type="submit"><a>Salvar dados</a> </button>
+                <div class="input-box">
+                    <label for="nome_pai">Pai:</label>
+                    <input type="text" name="nome_pai" value="<?php echo $nome_pai; ?>">
                 </div>
+
+                <div class="input-box">
+                    <label for="nome_mae">Mãe:</label>
+                    <input type="text" name="nome_mae" value="<?php echo $nome_mae; ?>">
+                </div>
+
+                <div class="input-box">
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" name="endereco" id="endereco" value="<?php echo $endereco; ?>">
+                </div>
+                <div class="input-box">
+                    <label for="escola">Escola:</label>
+                    <input type="text" name="escola" id="escola" value="<?php echo $escola; ?>">
+                </div>
+                <div class="input-box">
+                    <label for="telefone">Ano:</label>
+                    <input type="ano" name="ano" id="ano" value="<?php echo $ano; ?>">
+                </div>
+
+                <div class="input-box">
+                    <label for="data_nascimento">Data de Nascimento:</label>
+                    <input type="date" name="data_nascimento" id="data_nascimento" value="<?php echo $data_nascimento; ?>">
+                </div>
+
+                <div class="input-box">
+                    <label for="genero">Telefone:</label>
+                    <input type="text" name="genero" id="genero" value="<?php echo $genero; ?>">
+                </div>
+
+
                 <div class="continue-button">
-                    <button><a href="dashboard.php">sair</a></button>
+                    <button type="submit" value="Atualizar"><a href="">atualizar</a></button>
+                </div>
+
+                <div class="continue-button">
+                    <button><a href="dashboard.php">Voltar</a></button>
                 </div>
             </form>
 </body>

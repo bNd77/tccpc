@@ -23,9 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $senha = $_POST["senha"];
     $telefone = $_POST["telefone"];
+    $sobre = $_POST["sobre"];
 
     // Atualizar os dados no banco de dados
-    $query = "UPDATE conselheiro SET nome='$nome', email='$email', senha='$senha', telefone='$telefone' WHERE id_conselheiro=$id";
+    $query = "UPDATE conselheiro SET nome='$nome', email='$email', senha='$senha', telefone='$telefone', sobre='$sobre' WHERE id_conselheiro=$id";
     $resultado = mysqli_query($conexao, $query);
 
     // Verificar se a atualização foi bem-sucedida
@@ -67,6 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = $row["email"];
         $senha = $row["senha"];
         $telefone = $row["telefone"];
+        $sobre = $row["sobre"];
     } else {
         echo "Registro não encontrado.";
         exit();
@@ -115,6 +117,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="input-box">
         <label for="telefone">Telefone:</label>
         <input type="text" name="telefone" id="telefone" value="<?php echo $telefone; ?>">
+        </div>
+
+        <div class="input-box">
+        <label for="sobre">Sobre:</label>
+        <input type="text" name="sobre" id="sobre" value="<?php echo $sobre; ?>">
         </div>
 
         <div class="continue-button">

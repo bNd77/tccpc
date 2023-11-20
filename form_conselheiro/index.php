@@ -36,14 +36,31 @@
                     </div>
 
                     <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="senha" type="password" name="senha" placeholder="Digite sua Senha" required>
+                    </div>
+
+                    <div class="input-box">
                         <label for="number">Celular</label>
                         <input id="telefone" type="telefone" name="telefone" placeholder="(xx) xxxxx-xxxx" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="password">Senha</label>
-                        <input id="senha" type="password" name="senha" placeholder="Digite sua Senha" required>
+                        <label for="foto">Foto:</label>
+                        <input type="file" id="foto" name="foto" accept="image/*"><br>
                     </div>
+
+                    <div class="input-box">
+                        <label for="sobre">Sobre:</label>
+                        <textarea id="sobre" name="sobre" rows="4" cols="50"></textarea><br>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="mandato">Mandato:</label>
+                        <input type="text" id="mandato" name="mandato" ><br>
+                    </div>
+
+                
                 </div>
                 <div class="continue-button">
                     <button type="submit"><a>Continuar</a> </button>
@@ -54,3 +71,4 @@
 </body>
 
 </html>
+

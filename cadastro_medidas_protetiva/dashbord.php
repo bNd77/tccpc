@@ -4,7 +4,6 @@
     <title>Tabela Listagem de Medidas Protetivas</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="icon" type="image/x-icon" href="assets/favicon.jpg" />
 </head>
 <body>
     <div class="container">
@@ -15,7 +14,8 @@
         <table class="table table-striped table-bordered table-group-divider">
             <thead>
                 <tr>
-                    <th>Nome</th>   
+                    <th>Nome</th> 
+                    <th>Opções</th>  
                 </tr>
             </thead>
             <tbody>
@@ -45,7 +45,7 @@
                         echo "<tr>";
                      
                         echo "<td>" . $row["nome"] . "</td>";
-                        echo "</tr>";
+                        
 
                     
                         echo "<td> 

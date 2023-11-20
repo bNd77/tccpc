@@ -23,6 +23,7 @@ Este arquivo contem os elementos do menu, separados do restante do código-->
                     <i class="fas fa-exclamation-triangle"></i> Denúncias
                 </a>
                 <ul class="collapse list-unstyled" id="denuncias">
+                   
                     <li><a href="../cadastro_denuncias/dashboard.php">Gerenciar </a></li>
 
                 </ul>
@@ -55,22 +56,14 @@ Este arquivo contem os elementos do menu, separados do restante do código-->
                     <li><a href="../cadastro_medidas_protetiva/dashbord.php">Gerenciar </a></li>
                 </ul>
             </li>
-            <li class="active">
-                <a href="#ct" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle collapsed ">
-                    <i class="fas fa-solid fa-house-user"></i> CT
-                </a>
-                <ul class="collapse list-unstyled" id="ct">
-                    <li><a href="#">Novo </a></li>
-                    <li><a href="#">Gerenciar </a></li>
-                </ul>
-            </li>
+            
             <li class="active">
                 <a href="#encaminhamentos" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle collapsed">
                     <i class="fas fa-share"></i> Encaminhamentos
                 </a>
                 <ul class="collapse list-unstyled" id="encaminhamentos">
-                    <li><a href="#">Novo </a></li>
-                    <li><a href="#">Gerenciar </a></li>
+                    <li><a href="../cadastro_encaminhamento/index.php">Novo </a></li>
+                    <li><a href="../cadastro_encaminhamento/dashboard.php">Gerenciar </a></li>
                 </ul>
             </li>
             <li class="active">
@@ -78,13 +71,8 @@ Este arquivo contem os elementos do menu, separados do restante do código-->
                     <i class="fas fa-chart-bar"></i> Relatórios
                 </a>
                 <ul class="collapse list-unstyled" id="relatorios">
-                    <li><a href="#">Chamados por conselheiro</a></li>
-                    <li><a href="#">Denúncias por tipo</a></li>
-                    <li><a href="#">Total de chamados por período do ano</a></li>
-                    <li><a href="#">Denúncias por vitima</a></li>
-                    <li><a href="#">Denúncias por genero</a></li>
-                    <li><a href="#">Denúncias por faixa etaria</a></li>
-                    <li><a href="#">Chamados por encaminhamentos</a></li>
+                    <li><a href="../relatorios/genero.php">Denúncias por genero</a></li>
+                    <li><a href="../relatorios/mp.php">Denúncias por medida protetiva</a></li>
 
                 </ul>
             </li>

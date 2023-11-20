@@ -4,7 +4,6 @@
     <title>Tabela Listagem de Motivos</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="icon" type="image/x-icon" href="assets/favicon.jpg" />
 </head>
 <body>
     <div class="container">
@@ -16,6 +15,7 @@
             <thead>
                 <tr>
                     <th>Nome</th>   
+                    <th>Opcões</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,13 +42,13 @@
                 if ($result->num_rows > 0) {
                     // Loop para exibir cada linha de dados
                     while ($row = $result->fetch_assoc()) {
-                        echo "<tr>";
+                        echo "<t>";
                         echo "<td>" . $row["nome"] . "</td>";
-                        echo "</tr>";
+                       
 
                     
                     
-                        echo "<td> 
+                        echo "<td>
                     
                         <a class='btn btn-primary mr-5' type='submit' href='editar.php?id=" . $row["id_motivo"] . "''>
                         <i class='bi bi-pencil'></i>

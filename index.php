@@ -47,7 +47,7 @@
     <!-- Inicio-->
     <header class="masthead" id="inicio">
         <div class="container">
-            <div class="masthead-subheading">Bem-vindo ao Sistema de denuncias online do Conselho Tutelar de</div>
+            <div class="masthead-subheading">Bem vindo ao Sistema de denuncias online do Conselho Tutelar de</div>
             <div class="masthead-heading text-uppercase">São Borja</div>
             <a class="btn btn-danger btn-xl text-uppercase" href="#formulario">denuncie já</a>
         </div>
@@ -199,45 +199,23 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Quem são os conselheiros do mandato 2020/24</h2>
-                <h3 class="section-subheading text-muted">Seus meios de Contatos</h3>
             </div>
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="assets/img/team/usuario.png" alt="..." />
-                        <h4>Nome</h4>
-                        <p class="text-muted">Sobre mim:</p>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                <?php
+                $sql = "SELECT * FROM `conselheiro`;";
+                $result = $conn->query($sql);
+                
+                while ($row = $result->fetch_assoc()) { ?>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="assets/img/team/<?php echo $row['foto'] ?>" alt="..." />
+                            <h4><?php echo $row['nome'] ?></h4>
+                            <p class="text-muted"><?php echo $row['sobre'] ?></p>
+
+                        </div>
                     </div>
+                    <?php } ?>
                 </div>
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="assets/img/team/usuario.png" alt="..." />
-                        <h4>nome</h4>
-                        <p class="text-muted">Sobre mim:</p>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="assets/img/team/usuario.png" alt="..." />
-                        <h4>nome </h4>
-                        <p class="text-muted">Alguma info a mais</p>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-8 mx-auto text-center">
-                        <p class="large text-muted"></p>
-                    </div>
-                </div>
-            </div>
     </section>
     <!-- Footer-->
 
@@ -249,6 +227,8 @@
 
             </div>
             <div>
+                <h4>Localização: <i class="bi bi-geo-alt"></i></h4>
+
                 <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d343.29695412040275!2d-56.00791192722841!3d-28.65068154211011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9455c6373455839f%3A0x5f71962ca8e78dbf!2sR.%20Gen.%20Marques%2C%2087%20-%20Centro%2C%20S%C3%A3o%20Borja%20-%20RS%2C%2097670-000!5e0!3m2!1spt-BR!2sbr!4v1692623874639!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0" allowfullscreen></iframe>
             </div>
 
@@ -257,8 +237,8 @@
                 <div class="col-lg-4" data-aos="fade-right">
                     <div class="info">
                         <div class="address">
-                            <i class="bi bi-geo-alt"></i>
-                            <h4>Localização:</h4>
+
+
                             <p>Rua General Marques, 87 - Centro</p>
                         </div>
 
@@ -268,14 +248,6 @@
                         <a class="btn btn-dark btn-social mx-2" href="https://wa.me/555599863968" aria-label="Whatsapp CT"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Bernardo Gomes Dorneles 2023</span>
-                    </div>
-                </div>
-            </footer>
-                
 
                 <!-- Bootstrap core JS-->
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

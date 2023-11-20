@@ -9,7 +9,7 @@
      VALUES ('$nome')";
 
      if (mysqli_query($conn, $sql)) {
-        header("location: admin/index.php");
+        header("location: ../index.php");
      } else{
      echo "$nome NÃO foi cadastrado";
      }

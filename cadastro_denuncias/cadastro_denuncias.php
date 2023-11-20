@@ -13,7 +13,7 @@
 
 
      $sql = "INSERT INTO `denuncia`(`nome_vitima`,`nome_pai_vitima`,`nome_mae_vitima`,
-    `endereco_vitima`,`escola_vitima`,`idade_vitima`,`genero_vitima`,`motivo_id_motivo`,`relato`) 
+    `endereco_vitima`,`escola_vitima`,`idade_vitima`,`genero_vitima`,`tipo`,`relato`) 
      VALUES ('$nome_vitima','$nome_pai','$nome_mae','$endereco','$escola_vitima','$idade','$genero', '$motivo','$relato')";
 
      if (mysqli_query($conn, $sql)) {

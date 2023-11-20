@@ -4,7 +4,6 @@
     <title>Tabela Bootstrap com dados do MySQL</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="icon" type="image/x-icon" href="assets/favicon.jpg" />
     
 </head>
 <body>
@@ -50,7 +49,7 @@
                 $sql = "SELECT * , motivo.nome as nome_motivo
                 FROM denuncia
                 INNER JOIN motivo
-                ON denuncia.motivo_id_motivo = motivo.id_motivo"; 
+                ON denuncia.id_denuncia = motivo.id_motivo"; 
                 $result = $conn->query($sql);
 
                 // Verifica se existem registros retornados pela consulta
